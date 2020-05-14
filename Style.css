@@ -1,0 +1,116 @@
+@import url(https://fonts.googleapis.com/css?family=Acme);
+
+body {
+  font: 14px Acme, sans-serif;
+  margin: 20px;
+  text-align: center;
+}
+
+ol, ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #ccc;
+  border: 1px solid #999;
+  float: left;
+  font-family: ChessMedium, Acme;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 40px;
+  height: 40px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 40px;
+}
+.black_white {
+  background: #cc6600;
+  color: #fff;
+}
+.black_black {
+  background: #cc6600;
+  color: #000;
+}
+.white_white {
+  background: #ffcc80;
+  color: #fff;
+}
+.white_black {
+  background: #ffcc80;
+  color: #000;
+}
+.rotate_left {
+  -webkit-transform: rotate(90deg);  
+}
+.rotate_right {
+  -webkit-transform: rotate(-90deg);  
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 1.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
