@@ -35,29 +35,28 @@ ol, ul {
   text-align: center;
   width: 40px;
 }
-.black_white {
+.b_w {
   background: #cc6600;
   color: #fff;
 }
-.black_black {
+.b_b {
   background: #cc6600;
   color: #000;
 }
-.white_white {
+.w_w {
   background: #ffcc80;
   color: #fff;
 }
-.white_black {
+.w_b {
   background: #ffcc80;
   color: #000;
 }
-.rotate_left {
-  -webkit-transform: rotate(90deg);  
+.rotate {
+  -webkit-transform: rotate(180deg);  
 }
-.rotate_right {
-  -webkit-transform: rotate(-90deg);  
+.highlight {
+  border: 3px solid #00ff00;  
 }
-
 .square:focus {
   outline: none;
 }
@@ -75,42 +74,9 @@ ol, ul {
 .game-info {
   margin-left: 20px;
 }
-
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
+.goto {
+  font-family: Acme;
 }
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -60px;
-  opacity: 0;
-  transition: opacity 1.3s;
-}
-
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
+.bold {
+  font-weight: bold;
 }
