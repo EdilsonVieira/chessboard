@@ -6,8 +6,41 @@ body {
   text-align: center;
 }
 
+/* Width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: black; 
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #555; 
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: lightgreen; 
+}
+
 ol, ul {
-  padding-left: 30px;
+  padding-left: 7px;
+  padding-top: 3px;
+  margin: 0px;
+  list-style-type: none;
+  overflow-y: scroll;
+  height: 230px;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-board {
+  display: flex;
 }
 
 .board-row:after {
@@ -17,7 +50,7 @@ ol, ul {
 }
 
 .status {
-  margin-bottom: 10px;
+  margin: 10px;
 }
 
 .square {
@@ -25,37 +58,39 @@ ol, ul {
   border: 1px solid #999;
   float: left;
   font-family: ChessMedium, Acme;
-  font-size: 28px;
+  font-size: 30px;
   font-weight: bold;
-  line-height: 40px;
-  height: 40px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
+  line-height: 40px;
+  height: 40px;
   width: 40px;
 }
-.black_white {
+
+.black_square {
   background: #cc6600;
-  color: #fff;
 }
-.black_black {
-  background: #cc6600;
+
+.white_square {
+  background: #ffcc80;
+}
+
+.black_piece {
   color: #000;
 }
-.white_white {
-  background: #ffcc80;
+
+.white_piece {
   color: #fff;
 }
-.white_black {
-  background: #ffcc80;
-  color: #000;
+
+.rotate {
+  -webkit-transform: rotate(180deg);
 }
-.rotate_left {
-  -webkit-transform: rotate(90deg);  
-}
-.rotate_right {
-  -webkit-transform: rotate(-90deg);  
+
+.highlight {
+  border: 3px solid #00ff00;
 }
 
 .square:focus {
@@ -66,51 +101,41 @@ ol, ul {
   background: #ddd;
 }
 
-.game {
+.panel {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-flow: column;
+  background: black;
+  color: lightgreen;
+  padding: 4px;
 }
 
-.game-info {
-  margin-left: 20px;
+.black {
+  display: flex;
+  -webkit-transform: rotate(180deg);
 }
 
-.tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
+.white {
+  display: flex;
 }
 
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -60px;
-  opacity: 0;
-  transition: opacity 1.3s;
+.mono-font {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 9px;
 }
 
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
+.panel-button {
+  background: black;
+  color: green;
+  font-size: 10px;
 }
 
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
+.panel-button:hover {
+  background: lightgreen;
+  color: black;
 }
+
+.bold {
+  font-weight: bold;
+  color: lightgreen;
+}
+
